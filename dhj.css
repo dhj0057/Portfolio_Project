@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@400;700&family=JetBrains+Mono:wght@400&display=swap');
+
+/* --- 1. Base & Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: crosshair;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 0;
+    scroll-margin-top: 80px;
+    border-bottom: 0.5px solid #333;
+}
+
+/* --- 2. Navigation & Header (스타일 보존) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+/* --- 3. Section Specifics --- */
+/* Hero */
+.hero {
+    align-items: flex-start;
+    padding-left: 50px;
+}
+
+.hero h1 {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 1.0;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff 10%, #444444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    -webkit-text-fill-color: initial;
+}
+
+/* Approach (3D Cube Logic) */
+.split {
+    display: flex;
+    gap: 0;
+}
+
+.left-side {
+    flex: 1;
+    border-right: 0.5px solid #333;
+    position: relative;
+    min-height: 500px;
+    perspective: 1500px;
+}
+
+.left-side::after {
+    content: "LOGIC";
+    position: absolute;
+    bottom: -5%;
+    left: -5%;
+    font-family: 'Montserrat';
+    font-size: clamp(5rem, 18vw, 15rem);
+    color: rgba(255, 255, 255, 0.02);
+    font-weight: 800;
+    z-index: -1;
+    letter-spacing: -0.05em;
+}
+
+.logic-cube-model {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+}
+
+.cube {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes cubeRotate {
+    from {
+        transform: rotate3d(1, 1, 1, 0deg);
+    }
+
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+@keyframes cubeRotateReverse {
+    from {
+        transform: rotate3d(1, -1, 1, 0deg);
+    }
+
+    to {
+        transform: rotate3d(1, -1, 1, 360deg);
+    }
+}
+
+.inner-cube {
+    transform: scale(0.6);
+    animation: cubeRotate 25s linear infinite;
+}
+
+.outer-cube {
+    transform: scale(1.0);
+    animation: cubeRotateReverse 30s linear infinite;
+}
+
+.face.front {
+    transform: translateZ(125px);
+}
+
+.face.back {
+    transform: translateZ(-125px) rotateY(180deg);
+}
+
+.face.left {
+    transform: translateX(-125px) rotateY(-90deg);
+}
+
+.face.right {
+    transform: translateX(125px) rotateY(90deg);
+}
+
+.face.top {
+    transform: translateY(-125px) rotateX(90deg);
+}
+
+.face.bottom {
+    transform: translateY(125px) rotateX(-90deg);
+}
+
+.node {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    transform-style: preserve-3d;
+}
+
+.node-1 {
+    animation: nodeOrbit1 15s linear infinite;
+}
+
+/* ... nodeOrbit animations (보존됨) ... */
+
+.right-side {
+    flex: 1;
+    padding: 60px;
+}
+
+.label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+/* Skills Dashboard (3-Column Layout) */
+.skills-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.skill-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-header {
+    margin-bottom: 30px;
+}
+
+.skill-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #000;
+}
+
+.skill-status-bar {
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    margin-top: 15px;
+}
+
+.skill-status-bar .fill {
+    height: 100%;
+    background-color: #000;
+}
+
+.skill-item-group {
+    margin-bottom: 25px;
+}
+
+.skill-label {
+    display: block;
+    font-size: 0.65rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.skill-body p {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- 4. Projects & Contact --- */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px 80px;
+    margin-top: 40px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 30px 0;
+}
+
+.contact-card {
+    border: 1px solid #333;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: linear-gradient(145deg, #0a0a0a, #000);
+    transition: 0.5s;
+    margin-top: 50px;
+}
+
+.contact-card:hover {
+    border-color: #fff;
+}
+
+.card-name {
+    font-family: 'Montserrat';
+    font-size: 3rem;
+    letter-spacing: -1px;
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 30px;
+    border: 1px solid #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.github-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- 5. Responsive --- */
+@media (max-width: 1024px) {
+
+    .skills-dashboard-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        padding-left: 20px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .split {
+        flex-direction: column;
+    }
+
+    .left-side {
+        border-right: none;
+        border-bottom: 0.5px solid #333;
+        min-height: 300px;
+    }
+}
