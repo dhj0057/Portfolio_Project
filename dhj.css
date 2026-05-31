@@ -315,6 +315,30 @@ nav ul li a:hover {
     margin-top: 40px;
 }
 
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.project-btn {
+    display: inline-flex;
+    padding: 10px 16px;
+    border: 1px solid #666;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: #000;
+}
+
 .section-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 500;
