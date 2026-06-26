@@ -4,37 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyeong jun | Portfolio</title>
+    <title>DO HYEONG JUN | 0/1 LOGIC</title>
+    <meta name="description" content="Zero Sentiment, Absolute Logic — 개발자 도형준의 통합 아이덴티티 시스템">
     <link rel="stylesheet" href="dhj.css">
+    <script src="jquery.min.js"></script>
 </head>
 
 <body>
 
+    <!-- ░░ BOOT SEQUENCE OVERLAY (JS-driven) ░░ -->
+    <div id="boot" aria-hidden="true">
+        <div class="boot-inner mono">
+            <span class="boot-line" data-text="> INITIALIZING IDENTITY SYSTEM ..."></span>
+            <span class="boot-line" data-text="> MOUNT /dev/logic ............. [ OK ]"></span>
+            <span class="boot-line" data-text="> LOAD modules: dhj.core ....... [ OK ]"></span>
+            <span class="boot-line" data-text="> AUTH: DO HYEONG JUN .......... [ OK ]"></span>
+            <span class="boot-line boot-final" data-text="> SYSTEM ONLINE_"></span>
+        </div>
+    </div>
+
+    <!-- ░░ TOP SCROLL PROGRESS BAR ░░ -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
     <header>
-        <div class="logo">DO HYEONG JUN</div>
+        <a href="#about" class="logo">DO_HYEONG_JUN</a>
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul id="nav-list">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
+        <div class="header-controls">
+            <button id="theme-toggle" class="ctrl-btn mono" aria-label="테마 전환" title="LIGHT / DARK">
+                <span class="ctrl-icon">◐</span><span class="ctrl-text">DARK</span>
+            </button>
+            <button id="nav-toggle" class="ctrl-btn nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
     <main>
+        <!-- ░░ HERO ░░ -->
         <section id="about" class="hero">
             <div class="hero-content">
-                <h1>Zero Sentiment <br>Absolute Logic</h1>
+                <span class="label hero-eyebrow mono">// IDENTITY_SYSTEM v1.0</span>
+                <h1 id="typed-headline" aria-label="Zero Sentiment, Absolute Logic"></h1>
                 <p class="subtitle">Turning ideas into practical services through logic, code, and continuous learning.</p>
+                <div class="hero-meta mono">
+                    <span class="hero-stat"><b data-count="3" data-suffix="">0</b><i>LANGUAGES</i></span>
+                    <span class="hero-stat"><b data-count="4" data-suffix="">0</b><i>PROJECTS</i></span>
+                    <span class="hero-stat"><b data-count="1" data-suffix="ST">0</b><i>YEAR</i></span>
+                </div>
             </div>
+            <a href="#approach" class="scroll-cue mono" aria-hidden="true">SCROLL ↓</a>
         </section>
 
-        <section class="approach">
+        <!-- ░░ APPROACH (3D CUBE) ░░ -->
+        <section id="approach" class="approach">
             <div class="container split">
-                <div class="left-side">
-                    <span class="label">↓ MY APPROACH</span>
-                    <div class="logic-cube-model">
+                <div class="left-side reveal">
+                    <span class="label mono">↓ MY APPROACH</span>
+                    <div class="logic-cube-model" id="cube-model">
                         <div class="cube inner-cube">
                             <div class="face front"></div>
                             <div class="face back"></div>
@@ -59,76 +92,80 @@
                         <div class="node node-6"></div>
                     </div>
                 </div>
-                <div class="right-side">
-                    <span class="label">WHAT I DO</span>
+                <div class="right-side reveal">
+                    <span class="label mono">WHAT I DO</span>
                     <p class="description">시스템의 기본 원리를 이해하고, 복잡한 문제를 명확한 구조로 나누어 해결하는 과정을 중요하게 생각합니다. 현재는 정보처리산업기사와 리눅스 마스터 취득을 목표로 기초 역량을 꾸준히 확장하고 있습니다.</p>
                     <p class="description">C, C#, Python 기반의 학습을 넘어 Next.js와 TypeScript를 활용한 AI 웹 서비스를 직접 구현했습니다. GitHub로 소스를 관리하고 Vercel에 배포하며, 아이디어를 실제로 사용할 수 있는 결과물로 완성하는 경험을 쌓고 있습니다.</p>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="details" style="background-color: #fcfcfc; color: #000;">
+        <!-- ░░ SKILLS (INVERTED PANEL) ░░ -->
+        <section id="skills" class="details panel-invert">
             <div class="container">
-                <h2 class="section-title">TECHNICAL INVENTORY</h2>
-                <hr class="divider" style="border-top: 1px solid #ddd;">
+                <h2 class="section-title reveal">TECHNICAL INVENTORY</h2>
+                <hr class="divider">
 
                 <div class="skills-dashboard-grid">
-                    <div class="skill-col">
+                    <div class="skill-col reveal">
                         <div class="skill-header">
                             <span class="num mono">01.</span>
                             <h3>Software Development</h3>
-                            <div class="skill-status-bar">
-                                <div class="fill" style="width: 85%;"></div>
+                            <div class="skill-meter">
+                                <div class="skill-status-bar"><div class="fill" data-target="85"></div></div>
+                                <span class="skill-pct mono" data-target="85">0%</span>
                             </div>
                         </div>
                         <div class="skill-body">
-                            <div class="skill-item-group"><span class="skill-label">Languages</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Languages</span>
                                 <p>Python 3.x, C#, ANSI C</p>
                             </div>
-                            <div class="skill-item-group"><span class="skill-label">Algorithms</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Algorithms</span>
                                 <p>Data Structures, Logic Implementation via C#</p>
                             </div>
-                            <div class="skill-item-group"><span class="skill-label">Version Control</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Version Control</span>
                                 <p>Git, GitHub (Branching &amp; Collaboration)</p>
                             </div>
                         </div>
                     </div>
-                    <div class="skill-col">
+                    <div class="skill-col reveal">
                         <div class="skill-header">
                             <span class="num mono">02.</span>
                             <h3>AI &amp; Data Intelligence</h3>
-                            <div class="skill-status-bar">
-                                <div class="fill" style="width: 78%;"></div>
+                            <div class="skill-meter">
+                                <div class="skill-status-bar"><div class="fill" data-target="78"></div></div>
+                                <span class="skill-pct mono" data-target="78">0%</span>
                             </div>
                         </div>
                         <div class="skill-body">
-                            <div class="skill-item-group"><span class="skill-label">Computer Vision</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Computer Vision</span>
                                 <p>Image Processing with OpenCV &amp; NumPy</p>
                             </div>
-                            <div class="skill-item-group"><span class="skill-label">Generative AI</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Generative AI</span>
                                 <p>Prompt Engineering, Gemini API Integration, LLM Logic Design</p>
                             </div>
-                            <div class="skill-item-group"><span class="skill-label">Database</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Database</span>
                                 <p>Relational DB Design, SQL (DDL/DML) Queries</p>
                             </div>
                         </div>
                     </div>
-                    <div class="skill-col">
+                    <div class="skill-col reveal">
                         <div class="skill-header">
                             <span class="num mono">03.</span>
                             <h3>Web &amp; Infrastructure</h3>
-                            <div class="skill-status-bar">
-                                <div class="fill" style="width: 72%;"></div>
+                            <div class="skill-meter">
+                                <div class="skill-status-bar"><div class="fill" data-target="72"></div></div>
+                                <span class="skill-pct mono" data-target="72">0%</span>
                             </div>
                         </div>
                         <div class="skill-body">
-                            <div class="skill-item-group"><span class="skill-label">Frontend</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Frontend</span>
                                 <p>HTML5, CSS3, JavaScript (ES6+), Next.js, TypeScript</p>
                             </div>
-                            <div class="skill-item-group"><span class="skill-label">System</span>
+                            <div class="skill-item-group"><span class="skill-label mono">System</span>
                                 <p>Linux Environment, Shell Commands, PuTTY, Vercel Deployment</p>
                             </div>
-                            <div class="skill-item-group"><span class="skill-label">Certification</span>
+                            <div class="skill-item-group"><span class="skill-label mono">Certification</span>
                                 <p><strong>Candidate for Linux Master 2nd Class</strong></p>
                             </div>
                         </div>
@@ -137,96 +174,138 @@
             </div>
         </section>
 
+        <!-- ░░ PROJECTS (FILTER + MODAL) ░░ -->
         <section id="projects" class="details">
             <div class="container">
-                <h2 class="section-title">SELECTED PROJECTS</h2>
-                <p class="label" style="margin-top: -20px; margin-bottom: 30px;">Architecture &amp; Implementation</p>
+                <h2 class="section-title reveal">SELECTED PROJECTS</h2>
+                <p class="label mono reveal">Architecture &amp; Implementation</p>
                 <hr class="divider">
-                <div class="detail-grid">
-                    <div class="detail-item"><span class="num mono">01.</span>
-                        <h3>Vision Processing Engine</h3>
-                        <p class="label">Python, OpenCV, NumPy</p>
-                    </div>
-                    <div class="detail-text">
-                        <p><strong>이미지 전처리 및 객체 인식 파이프라인 설계</strong><br>실시간 영상 데이터의 노이즈 제거 및 엣지 검출 알고리즘을 구현했습니다. 단순 학습을
-                            넘어, 픽셀 단위의 연산 효율성을 고려한 필터링 기술을 연구하고 있습니다.</p>
-                    </div>
 
-                    <div class="detail-item"><span class="num mono">02.</span>
-                        <h3>RDBMS Structural Design</h3>
-                        <p class="label">SQL, MariaDB, ERD</p>
-                    </div>
-                    <div class="detail-text">
-                        <p><strong>데이터 무결성을 위한 관계형 데이터베이스 모델링</strong><br>효율적인 데이터 적재와 조회를 위한 정규화 과정을 수행합니다. 최적의 인덱싱 구조를
-                            도출하는 백엔드 기초 설계 프로젝트입니다.</p>
-                    </div>
-
-                    <div class="detail-item"><span class="num mono">03.</span>
-                        <h3>HaruFit AI Health Chatbot</h3>
-                        <p class="label">Next.js, TypeScript, Gemini API, Vercel</p>
-                    </div>
-                    <div class="detail-text">
-                        <p><strong>생활 습관 기반 AI 건강 코칭 챗봇 개발 및 배포</strong><br>사용자의 식단, 운동 목표, 수면 상태와 생활 습관을 바탕으로 실천 가능한 일반 건강 관리 조언을 제공하는 대화형 서비스를 구현했습니다. Next.js API Route에서 Gemini API를 호출하여 키를 서버 환경 변수로 보호하고, 최근 대화만 전달해 토큰 사용량을 최적화했습니다. 반응형 채팅 UI와 빠른 질문 버튼, 로딩 및 오류 안내를 구성하고 Vercel에 배포했습니다.</p>
-                        <div class="project-links">
-                            <a href="https://health-care-app-steel.vercel.app" target="_blank"
-                                rel="noopener noreferrer" class="project-btn">LIVE DEMO</a>
-                            <a href="https://github.com/dhj0057/HealthCareAPP" target="_blank"
-                                rel="noopener noreferrer" class="project-btn">VIEW SOURCE</a>
-                        </div>
-                    </div>
-
-                    <div class="detail-item"><span class="num mono">04.</span>
-                        <h3>Cafe Kiosk Order System</h3>
-                        <p class="label">Java, Java Swing, OOP</p>
-                    </div>
-                    <div class="detail-text">
-                        <p><strong>Java Swing 기반 카페 키오스크 주문 관리 시스템 구현</strong><br>객체지향 설계 원칙(상속, 캡슐화, 다형성)을 적용하여 카페 키오스크 프로그램을 구현했습니다. Product 추상 클래스를 Coffee·Dessert가 상속하는 구조로 다형성을 실현하고, ArrayList 컬렉션으로 주문 내역을 관리합니다. 20,000원 이상 주문 시 10% 할인이 자동 적용되며, 고객명 포함 영수증이 출력됩니다.</p>
-                        <div class="project-links">
-                            <a href="https://dhj0057.github.io/Java_1st_Semester_Final_Assignment/" target="_blank"
-                                rel="noopener noreferrer" class="project-btn">LIVE DEMO</a>
-                            <a href="https://github.com/dhj0057/Java_1st_Semester_Final_Assignment" target="_blank"
-                                rel="noopener noreferrer" class="project-btn">VIEW SOURCE</a>
-                        </div>
-                    </div>
+                <div class="filter-bar reveal" id="filter-bar">
+                    <button class="filter-btn mono is-active" data-filter="all">ALL</button>
+                    <button class="filter-btn mono" data-filter="ai">AI</button>
+                    <button class="filter-btn mono" data-filter="data">DATA</button>
+                    <button class="filter-btn mono" data-filter="web">WEB</button>
+                    <button class="filter-btn mono" data-filter="java">JAVA</button>
                 </div>
+
+                <div class="project-grid" id="project-grid">
+                    <article class="project-card reveal" data-category="ai"
+                        data-title="Vision Processing Engine" data-stack="Python · OpenCV · NumPy"
+                        data-desc="실시간 영상 데이터의 노이즈 제거 및 엣지 검출 알고리즘을 구현했습니다. 단순 학습을 넘어, 픽셀 단위의 연산 효율성을 고려한 필터링 기술을 연구하고 있습니다.">
+                        <span class="card-tag mono">AI · VISION</span>
+                        <span class="num mono">01.</span>
+                        <h3>Vision Processing Engine</h3>
+                        <p class="label mono">Python · OpenCV · NumPy</p>
+                        <p class="card-desc">이미지 전처리 및 객체 인식 파이프라인 설계.</p>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="data"
+                        data-title="RDBMS Structural Design" data-stack="SQL · MariaDB · ERD"
+                        data-desc="효율적인 데이터 적재와 조회를 위한 정규화 과정을 수행합니다. 최적의 인덱싱 구조를 도출하는 백엔드 기초 설계 프로젝트입니다.">
+                        <span class="card-tag mono">DATA · DB</span>
+                        <span class="num mono">02.</span>
+                        <h3>RDBMS Structural Design</h3>
+                        <p class="label mono">SQL · MariaDB · ERD</p>
+                        <p class="card-desc">데이터 무결성을 위한 관계형 데이터베이스 모델링.</p>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="web"
+                        data-title="HaruFit AI Health Chatbot" data-stack="Next.js · TypeScript · Gemini API · Vercel"
+                        data-desc="사용자의 식단, 운동 목표, 수면 상태와 생활 습관을 바탕으로 실천 가능한 일반 건강 관리 조언을 제공하는 대화형 서비스를 구현했습니다. Next.js API Route에서 Gemini API를 호출하여 키를 서버 환경 변수로 보호하고, 최근 대화만 전달해 토큰 사용량을 최적화했습니다. 반응형 채팅 UI와 빠른 질문 버튼, 로딩 및 오류 안내를 구성하고 Vercel에 배포했습니다."
+                        data-live="https://health-care-app-steel.vercel.app"
+                        data-source="https://github.com/dhj0057/HealthCareAPP">
+                        <span class="card-tag mono">WEB · AI</span>
+                        <span class="num mono">03.</span>
+                        <h3>HaruFit AI Health Chatbot</h3>
+                        <p class="label mono">Next.js · TypeScript · Gemini · Vercel</p>
+                        <p class="card-desc">생활 습관 기반 AI 건강 코칭 챗봇 개발 및 배포.</p>
+                        <div class="project-links">
+                            <a href="https://health-care-app-steel.vercel.app" target="_blank" rel="noopener noreferrer" class="project-btn mono">LIVE DEMO</a>
+                            <a href="https://github.com/dhj0057/HealthCareAPP" target="_blank" rel="noopener noreferrer" class="project-btn mono">SOURCE</a>
+                        </div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="java"
+                        data-title="Cafe Kiosk Order System" data-stack="Java · Java Swing · OOP"
+                        data-desc="객체지향 설계 원칙(상속, 캡슐화, 다형성)을 적용하여 카페 키오스크 프로그램을 구현했습니다. Product 추상 클래스를 Coffee·Dessert가 상속하는 구조로 다형성을 실현하고, ArrayList 컬렉션으로 주문 내역을 관리합니다. 20,000원 이상 주문 시 10% 할인이 자동 적용되며, 고객명 포함 영수증이 출력됩니다."
+                        data-live="https://dhj0057.github.io/Java_1st_Semester_Final_Assignment/"
+                        data-source="https://github.com/dhj0057/Java_1st_Semester_Final_Assignment">
+                        <span class="card-tag mono">JAVA · OOP</span>
+                        <span class="num mono">04.</span>
+                        <h3>Cafe Kiosk Order System</h3>
+                        <p class="label mono">Java · Java Swing · OOP</p>
+                        <p class="card-desc">객체지향 기반 카페 키오스크 주문 관리 시스템.</p>
+                        <div class="project-links">
+                            <a href="https://dhj0057.github.io/Java_1st_Semester_Final_Assignment/" target="_blank" rel="noopener noreferrer" class="project-btn mono">LIVE DEMO</a>
+                            <a href="https://github.com/dhj0057/Java_1st_Semester_Final_Assignment" target="_blank" rel="noopener noreferrer" class="project-btn mono">SOURCE</a>
+                        </div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+                </div>
+                <p class="empty-state mono" id="empty-state" hidden>// NO MODULES MATCH FILTER</p>
             </div>
         </section>
 
-        <section id="contact" class="details" style="background-color: #0a0a0a;">
+        <!-- ░░ CONTACT ░░ -->
+        <section id="contact" class="details contact-section">
             <div class="container">
-                <h2 class="section-title">CONTACT</h2>
-                <hr class="divider" style="border-top: 1px solid #333;">
-                <div class="contact-card">
+                <h2 class="section-title reveal">CONTACT</h2>
+                <hr class="divider">
+                <div class="contact-card reveal">
                     <div class="card-info">
-                        <span class="card-label">Developer</span>
+                        <span class="card-label mono">// DEVELOPER</span>
                         <h3 class="card-name">DO HYEONG JUN</h3>
-                        <div class="card-links">
-                            <p><strong>Email:</strong> dhj00570@gmail.com</p>
-                            <p><strong>Location:</strong> Korea Polytechnics</p>
+                        <div class="card-links mono">
+                            <p><strong>EMAIL</strong> dhj00570@gmail.com</p>
+                            <p><strong>BASE</strong> Korea Polytechnics</p>
                         </div>
                     </div>
                     <div class="card-action">
-                        <a href="https://github.com/dhj0057" target="_blank" class="github-btn">
+                        <a href="https://github.com/dhj0057" target="_blank" rel="noopener noreferrer" class="github-btn mono">
                             VIEW GITHUB
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
-                                style="margin-left: 8px;">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="../index.html" class="github-btn" style="margin-left: 15px;">
-                            RETURN
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                style="margin-left: 8px;">
-                                <polyline points="15 18 9 12 15 6"></polyline>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-left:8px;">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                             </svg>
                         </a>
                     </div>
                 </div>
+                <footer class="site-footer mono">
+                    <span>© 2026 DO HYEONG JUN</span>
+                    <span>BUILT WITH HTML5 · CSS3 · JAVASCRIPT · JQUERY</span>
+                </footer>
             </div>
         </section>
     </main>
+
+    <!-- ░░ SYSTEM HUD (live readout) ░░ -->
+    <aside id="hud" class="mono" aria-hidden="true">
+        <span class="hud-row"><i>STATUS</i><b class="hud-online">● ONLINE</b></span>
+        <span class="hud-row"><i>TIME</i><b id="hud-clock">--:--:--</b></span>
+        <span class="hud-row"><i>SCROLL</i><b id="hud-scroll">000%</b></span>
+        <span class="hud-row"><i>SECTION</i><b id="hud-section">ABOUT</b></span>
+    </aside>
+
+    <!-- ░░ BACK TO TOP ░░ -->
+    <button id="back-to-top" class="mono" aria-label="맨 위로">↑ TOP</button>
+
+    <!-- ░░ PROJECT MODAL ░░ -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close mono" aria-label="닫기">[ ESC ] ✕</button>
+            <span class="modal-tag mono" id="modal-tag"></span>
+            <h3 id="modal-title"></h3>
+            <p class="label mono" id="modal-stack"></p>
+            <p class="modal-desc" id="modal-desc"></p>
+            <div class="modal-links" id="modal-links"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
