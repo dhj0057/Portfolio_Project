@@ -1,3 +1,373 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>도형준 | 개발 포트폴리오</title><meta name="description" content="도형준의 AI 서비스, 백엔드 개발 및 현장 협업 포트폴리오"><style>
-:root{--ink:#142c31;--muted:#455e62;--rule:#cad5d1;--accent:#006a57}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f8f3;color:var(--ink);font:16px/1.7 'Malgun Gothic',system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}main,header,footer{max-width:1120px;margin:auto;padding:0 5%}header{display:flex;justify-content:space-between;align-items:center;padding-block:18px;border-bottom:1px solid var(--rule)}nav{display:flex;gap:22px}a{color:var(--accent);font-weight:700;text-underline-offset:5px}nav a,header>b{font-size:.9rem}a:focus-visible,summary:focus-visible{outline:3px solid #da7319;outline-offset:4px}h1,h2,h3,p{margin:0}h1{font-size:clamp(3rem,8vw,6rem);letter-spacing:-.07em;line-height:1.15;margin:12px 0 18px}h2{font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.05em;margin:0 0 22px}h3{font-size:1.4rem;line-height:1.4;margin:8px 0 12px}.hero{padding:7vh 0 6vh;display:grid;grid-template-columns:3fr 2fr;gap:6%;align-items:center}.hero p{max-width:34em}.hero aside{border-left:3px solid var(--accent);padding:12px 20px}.hero aside p{margin-top:8px}.label,small,time{font:700 .8rem/1.65 system-ui,sans-serif;color:var(--accent);letter-spacing:.035em}section.work{border-top:1px solid var(--rule);padding:36px 0}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}article{padding:24px;background:white;border:1px solid var(--rule);border-top:4px solid var(--accent);border-radius:3px;display:flex;flex-direction:column;align-items:start}article:first-child{background:#143d37;color:#fff}article:first-child :is(small,a,summary,.stack){color:#b9edd8}summary{cursor:pointer;font-weight:bold;color:var(--accent)}details{margin:14px 0}details p{margin-top:8px}.stack{font-size:.82rem;color:var(--muted);margin:auto 0 12px;padding-top:10px}.row{display:grid;grid-template-columns:1fr 2fr;gap:24px;border-top:1px solid var(--rule);padding:18px 0}.row h3{font-size:1.08rem;margin:0}.row p{color:var(--muted)}footer{border-top:1px solid var(--rule);padding-block:30px 48px}footer a{display:inline-block;margin-right:20px}@media(max-width:800px){.cards{grid-template-columns:1fr}.hero{grid-template-columns:1fr;gap:22px}.hero aside{padding-block:0}.row{grid-template-columns:1fr;gap:5px}nav{gap:12px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head><body><header><b>도형준 / 개발 포트폴리오</b><nav aria-label="주요 메뉴"><a href="#projects">프로젝트</a><a href="#awards">수상</a><a href="#contact">연락</a></nav></header><main><section class="hero"><div><small>AI 서비스 · 백엔드 개발</small><h1>도형준</h1><p>사용자의 이야기를 듣고, 현장에서 쓸 수 있는 소프트웨어를 만듭니다. 축제 안내문을 읽는 AI 웹 앱부터 도서관 방문 안내 서비스까지 직접 제안하고 구현한 작업을 모았습니다.</p></div><aside><strong>한국폴리텍대학 서울정수캠퍼스</strong><p>인공지능소프트웨어과<br>학술동아리 PASS · SEMICOLON</p></aside></section><section class="work" id="projects"><h2>대표 프로젝트</h2><div class="cards"><article><small>개인 개발 · HACK:ON 수상</small><h3>축제 한 장</h3><p>외국인 방문객이 한국어 축제 안내문에서 가격·시간·장소를 찾고, 현장 직원에게 한국어로 질문할 수 있는 웹 앱입니다.</p><details><summary>역할과 구현 과정</summary><p>사진이나 텍스트를 입력하면 Gemini가 한·영 요약과 질문 카드를 생성합니다. 각 항목에 원문 근거를 함께 요청하고, 읽을 수 없는 값은 비워 두도록 설계했습니다. Node.js 서버에서 응답 형식을 다시 검사합니다.</p></details><p class="stack">Node.js / JavaScript / Gemini</p><a href="https://github.com/dhj0057/HACK-ON_festival-one-shot">구현 코드 보기 ↗</a></article><article><small>백엔드 전담 · 미래내일 일경험</small><h3>AI 업무일지 MCP 서버</h3><p>개발자가 하루 동안 남긴 작업 기록을 모아 업무일지 초안을 만들고, 검토한 내용을 HR 서비스에 등록합니다.</p><details><summary>역할과 구현 과정</summary><p>팀에서 MCP 서버의 설계·개발·배포를 맡았습니다. 여러 사람이 원격으로 접속할 때 초안이 섞이지 않도록 사용자별로 분리했습니다. HTTPS 환경에서 초안 작성부터 등록까지 확인했고 테스트 사례를 공개했습니다.</p></details><p class="stack">Python / FastMCP / pytest / nginx</p><a href="https://github.com/dhj0057/waple-portfolio">설계와 테스트 보기 ↗</a></article><article><small>현장 제안 · SEMICOLON 팀</small><h3>용산꿈나무도서관 방문 안내</h3><p>도서관에 직접 협업을 제안하고, 팀원들과 과거 입장 기록을 바탕으로 방문 시간대를 비교하는 서비스를 만들었습니다.</p><details><summary>역할과 구현 과정</summary><p>사서와 사용 방식을 협의하고 현장에서 서비스를 시연했습니다. 날짜별·시간대별 입장 통계를 제공하고, 현장에서 이어 쓸 수 있도록 사용설명서와 안내 포스터를 전달했습니다.</p></details><p class="stack">데이터 전처리 / 시간대별 통계 / 웹 배포</p><a href="https://github.com/dhj0057/library-congestion-service">프로젝트 저장소 보기 ↗</a></article></div></section><section class="work" id="awards"><h2>수상과 아이디어 발표</h2><div class="row"><time>2026.11.06</time><div><h3>교육장비 개발 및 아이디어 경진대회 · 공동 동상</h3><p>한국실천공학교육학회. AutoCert AI Lab은 기출문제를 자동화 설비 실습에 연결하고, 학습자가 설비 신호를 보고 판단한 과정을 평가하는 교육장비 아이디어입니다. 논문 형식으로 제안하고 발표했습니다.</p></div></div><div class="row"><time>2026.10.31</time><div><h3>SYNNEX Local Impact Award</h3><p>Hello World AI Hackathon · HACK:ON. 개인 출품작 ‘Festival One Shot · 축제 한 장’으로 지역 문제를 AI로 해결하는 SYNNEX 챌린지에서 수상했습니다.</p></div></div></section><section class="work"><h2>더 해본 작업</h2><div class="row"><h3><a href="https://github.com/dhj0057/ai-smart-helpdesk">AI Smart Help Desk ↗</a></h3><p>5인 팀 프로젝트 진행 중. 대학 문의를 접수·분류하는 서비스에서 공통 데이터 형식, 저장, 처리 상태 변경과 팀 통합을 맡았습니다.</p></div><div class="row"><h3><a href="https://github.com/dhj0057/HealthCareAPP">HaruFit ↗</a></h3><p>Next.js와 TypeScript로 구성한 생활 습관 코칭 챗봇입니다. Gemini를 연결하고 Vercel로 배포했습니다.</p></div><div class="row"><h3><a href="https://github.com/dhj0057/JAVA_CafeKiosk">카페 키오스크 ↗</a></h3><p>Java Swing으로 메뉴 선택부터 주문까지 구현하며 화면 이벤트와 주문 객체를 연결했습니다.</p></div><div class="row"><h3>비전·데이터 실습</h3><p>RGB-D 카메라와 로봇팔로 시편을 촬영하고 정합도를 확인했습니다. 데이터 수업에서는 6개 센서로 3초·30초 후의 값을 예측하고 모델별 결과를 비교했습니다.</p></div></section></main><footer id="contact"><h2>연락처</h2><a href="mailto:dhj00570@gmail.com">dhj00570@gmail.com</a><a href="https://github.com/dhj0057/">GitHub 프로필 ↗</a></footer></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO HYEONG JUN | 0/1 LOGIC</title>
+    <meta name="description" content="Zero Sentiment, Absolute Logic — 개발자 도형준의 통합 아이덴티티 시스템">
+    <link rel="stylesheet" href="dhj.css">
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ░░ BOOT SEQUENCE OVERLAY (JS-driven) ░░ -->
+    <div id="boot" aria-hidden="true">
+        <div class="boot-inner mono">
+            <span class="boot-line" data-text="> INITIALIZING IDENTITY SYSTEM ..."></span>
+            <span class="boot-line" data-text="> MOUNT /dev/logic ............. [ OK ]"></span>
+            <span class="boot-line" data-text="> LOAD modules: dhj.core ....... [ OK ]"></span>
+            <span class="boot-line" data-text="> AUTH: DO HYEONG JUN .......... [ OK ]"></span>
+            <span class="boot-line boot-final" data-text="> SYSTEM ONLINE_"></span>
+        </div>
+    </div>
+
+    <!-- ░░ TOP SCROLL PROGRESS BAR ░░ -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <header>
+        <a href="#about" class="logo">DO_HYEONG_JUN</a>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <button id="theme-toggle" class="ctrl-btn mono" aria-label="테마 전환" title="LIGHT / DARK">
+                <span class="ctrl-icon">◐</span><span class="ctrl-text">DARK</span>
+            </button>
+            <button id="nav-toggle" class="ctrl-btn nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ░░ HERO ░░ -->
+        <section id="about" class="hero">
+            <div class="hero-content">
+                <span class="label hero-eyebrow mono">// IDENTITY_SYSTEM v1.0</span>
+                <h1 id="typed-headline" aria-label="Zero Sentiment, Absolute Logic"></h1>
+                <p class="subtitle">Turning ideas into practical services through logic, code, and continuous learning.</p>
+                <div class="hero-meta mono">
+                    <span class="hero-stat"><b data-count="6" data-suffix="">0</b><i>LANGUAGES</i></span>
+                    <span class="hero-stat"><b data-count="10" data-suffix="">0</b><i>PROJECTS</i></span>
+                    <span class="hero-stat"><b data-count="1" data-suffix="ST">0</b><i>YEAR</i></span>
+                </div>
+            </div>
+            <a href="#approach" class="scroll-cue mono" aria-hidden="true">SCROLL ↓</a>
+        </section>
+
+        <!-- ░░ APPROACH (3D CUBE) ░░ -->
+        <section id="approach" class="approach">
+            <div class="container split">
+                <div class="left-side reveal">
+                    <span class="label mono">↓ MY APPROACH</span>
+                    <div class="logic-cube-model" id="cube-model">
+                        <div class="cube inner-cube">
+                            <div class="face front"></div>
+                            <div class="face back"></div>
+                            <div class="face left"></div>
+                            <div class="face right"></div>
+                            <div class="face top"></div>
+                            <div class="face bottom"></div>
+                        </div>
+                        <div class="cube outer-cube">
+                            <div class="face front"></div>
+                            <div class="face back"></div>
+                            <div class="face left"></div>
+                            <div class="face right"></div>
+                            <div class="face top"></div>
+                            <div class="face bottom"></div>
+                        </div>
+                        <div class="node node-1"></div>
+                        <div class="node node-2"></div>
+                        <div class="node node-3"></div>
+                        <div class="node node-4"></div>
+                        <div class="node node-5"></div>
+                        <div class="node node-6"></div>
+                    </div>
+                </div>
+                <div class="right-side reveal">
+                    <span class="label mono">WHAT I DO</span>
+                    <p class="description">도서관 사서에게 방문 안내 서비스를 제안하고, 팀과 함께 현장에서 사용법을 시연했습니다. 소프트웨어를 쓸 사람이 어떤 결정을 내려야 하는지부터 살피며 개발합니다.</p>
+                    <p class="description">축제 안내문을 읽는 AI 웹 앱에서는 답변의 근거를 확인할 수 있게 했고, 업무일지 MCP 서버에서는 여러 사용자의 초안이 섞이지 않도록 설계했습니다. AI 서비스와 백엔드 개발을 중심으로 경험을 쌓고 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ░░ SKILLS (INVERTED PANEL) ░░ -->
+        <section id="skills" class="details panel-invert">
+            <div class="container">
+                <h2 class="section-title reveal">TECHNICAL INVENTORY</h2>
+                <hr class="divider">
+
+                <div class="skills-dashboard-grid">
+                    <div class="skill-col reveal">
+                        <div class="skill-header">
+                            <span class="num mono">01.</span>
+                            <h3>Software Development</h3>
+                            <div class="skill-meter">
+                                <div class="skill-status-bar"><div class="fill" data-target="85"></div></div>
+                                <span class="skill-pct mono" data-target="85">0%</span>
+                            </div>
+                        </div>
+                        <div class="skill-body">
+                            <div class="skill-item-group"><span class="skill-label mono">Languages</span>
+                                <p>Python, C#, C, Java, JavaScript, TypeScript</p>
+                            </div>
+                            <div class="skill-item-group"><span class="skill-label mono">Algorithms</span>
+                                <p>Data Structures, Logic Implementation via C#</p>
+                            </div>
+                            <div class="skill-item-group"><span class="skill-label mono">Version Control</span>
+                                <p>Git, GitHub (Branching &amp; Collaboration)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-col reveal">
+                        <div class="skill-header">
+                            <span class="num mono">02.</span>
+                            <h3>AI &amp; Data Intelligence</h3>
+                            <div class="skill-meter">
+                                <div class="skill-status-bar"><div class="fill" data-target="78"></div></div>
+                                <span class="skill-pct mono" data-target="78">0%</span>
+                            </div>
+                        </div>
+                        <div class="skill-body">
+                            <div class="skill-item-group"><span class="skill-label mono">Computer Vision</span>
+                                <p>OpenCV · NumPy · RealSense D405 RGB-D 촬영 및 정합 확인</p>
+                            </div>
+                            <div class="skill-item-group"><span class="skill-label mono">Generative AI</span>
+                                <p>Gemini API · 구조화 출력 검증 · FastMCP</p>
+                            </div>
+                            <div class="skill-item-group"><span class="skill-label mono">Database</span>
+                                <p>Relational DB Design, SQL (DDL/DML) Queries</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-col reveal">
+                        <div class="skill-header">
+                            <span class="num mono">03.</span>
+                            <h3>Web &amp; Infrastructure</h3>
+                            <div class="skill-meter">
+                                <div class="skill-status-bar"><div class="fill" data-target="72"></div></div>
+                                <span class="skill-pct mono" data-target="72">0%</span>
+                            </div>
+                        </div>
+                        <div class="skill-body">
+                            <div class="skill-item-group"><span class="skill-label mono">Frontend</span>
+                                <p>HTML5, CSS3, JavaScript (ES6+), Next.js, TypeScript</p>
+                            </div>
+                            <div class="skill-item-group"><span class="skill-label mono">System</span>
+                                <p>Linux Environment, Shell Commands, PuTTY, Vercel Deployment</p>
+                            </div>
+                            <div class="skill-item-group"><span class="skill-label mono">Certification</span>
+                                <p><strong>Candidate for Linux Master 2nd Class</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ░░ PROJECTS (FILTER + MODAL) ░░ -->
+        <section id="projects" class="details">
+            <div class="container">
+                <h2 class="section-title reveal">SELECTED PROJECTS</h2>
+                <p class="label mono reveal">Architecture &amp; Implementation</p>
+                <hr class="divider">
+
+                <div class="filter-bar reveal" id="filter-bar">
+                    <button class="filter-btn mono is-active" data-filter="all">ALL</button>
+                    <button class="filter-btn mono" data-filter="ai">AI</button>
+                    <button class="filter-btn mono" data-filter="data">DATA</button>
+                    <button class="filter-btn mono" data-filter="web">WEB</button>
+                    <button class="filter-btn mono" data-filter="java">JAVA</button>
+                </div>
+
+                <div class="project-grid" id="project-grid">
+                    <article class="project-card reveal" data-category="ai" data-title="Festival One Shot" data-stack="Node.js · Gemini · JavaScript" data-desc="외국인 방문객이 안내문의 가격·시간·장소를 확인할 수 있도록 각 답변에 원문 근거를 붙였습니다. 읽을 수 없는 항목은 비워 두고 서버에서 응답 형식을 검사합니다. 2026년 10월 31일 Hello World AI Hackathon에서 SYNNEX Local Impact Award를 수상했습니다." data-source="https://github.com/dhj0057/HACK-ON_festival-one-shot">
+                        <span class="card-tag mono">AI · HACK:ON</span>
+                        <span class="num mono">01.</span>
+                        <h3>Festival One Shot</h3>
+                        <p class="label mono">Node.js · Gemini · JavaScript</p>
+                        <p class="card-desc">축제 안내문 사진을 한·영 요약과 현장 질문 카드로 바꾸는 개인 개발 웹 앱.</p>
+                        <div class="project-links"><a class="project-btn mono" href="https://github.com/dhj0057/HACK-ON_festival-one-shot" target="_blank" rel="noopener noreferrer">SOURCE</a></div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="ai"
+                        data-title="AI Worklog Automation MCP Server" data-stack="Python · MCP(Model Context Protocol) · REST API"
+                        data-desc="Claude/Claude Code 세션에서 하루 동안 수행한 작업을 자동으로 수집해 업무일지 초안을 만들고, 사용자가 승인한 경우에만 사내 HR SaaS 플랫폼에 실제로 등록하는 MCP(Model Context Protocol) 서버를 설계·개발·배포했습니다. 로컬(stdio)과 원격(Streamable HTTP) 두 가지 트랜스포트를 하나의 서버 코드로 지원하며, 멀티유저 환경에서 다른 사용자의 키로 등록되는 사고를 막기 위해 ContextVar 기반 요청별 인증 격리와 API 키 SHA-256 해시 기반 캐시 스코핑을 설계했습니다. nginx 리버스 프록시와 HTTPS로 사내 서버에 실제 배포하고, 원격 커넥터를 통한 실제 등록까지 E2E로 검증했습니다. 자동화 테스트 30여 케이스를 작성해 전부 통과시켰습니다. 공개 저장소에는 사내 접속 정보를 제외하고 재구성한 구현과 테스트를 정리했습니다." data-source="https://github.com/dhj0057/waple-portfolio">
+                        <span class="card-tag mono">AI · MCP</span>
+                        <span class="num mono">02.</span>
+                        <h3>AI Worklog Automation MCP Server</h3>
+                        <p class="label mono">Python · MCP · REST API</p>
+                        <p class="card-desc">Claude Code 연동 업무일지 자동화 MCP 서버 개발·배포.</p>
+                        <div class="project-links"><a class="project-btn mono" href="https://github.com/dhj0057/waple-portfolio" target="_blank" rel="noopener noreferrer">SOURCE</a></div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="data" data-title="용산꿈나무도서관 방문 안내" data-stack="Python · 입장 통계 · 웹 배포" data-desc="방문자는 과거 입장 기록을 바탕으로 날짜별·시간대별 이용 패턴을 비교할 수 있습니다. 사서와 사용 방식을 협의하고 현장에서 서비스를 시연한 뒤 사용설명서와 안내 포스터를 전달했습니다." data-source="https://github.com/dhj0057/library-congestion-service">
+                        <span class="card-tag mono">DATA · SEMICOLON</span>
+                        <span class="num mono">03.</span>
+                        <h3>용산꿈나무도서관 방문 안내</h3>
+                        <p class="label mono">Python · 입장 통계 · 웹 배포</p>
+                        <p class="card-desc">도서관에 직접 협업을 제안하고 팀과 함께 시간대별 방문 안내 서비스를 배포했습니다.</p>
+                        <div class="project-links"><a class="project-btn mono" href="https://github.com/dhj0057/library-congestion-service" target="_blank" rel="noopener noreferrer">SOURCE</a></div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="ai" data-title="AutoCert AI Lab" data-stack="자동화 설비 · 과정중심평가 · 아이디어 제안" data-desc="학습자가 설비의 출력과 센서 입력을 보고 어떤 추가 확인이 필요한지 설명하는 실습을 제안했습니다. 판단 과정을 평가하는 방안을 논문 형식으로 정리해 발표했고, 2026년 11월 6일 교육장비 개발 및 아이디어 경진대회에서 공동 동상을 받았습니다.">
+                        <span class="card-tag mono">AI · EDUCATION</span>
+                        <span class="num mono">04.</span>
+                        <h3>AutoCert AI Lab</h3>
+                        <p class="label mono">자동화 설비 · 과정중심평가 · 아이디어 제안</p>
+                        <p class="card-desc">기출문제와 설비 신호를 연결한 교육장비 아이디어로 한국실천공학교육학회 경진대회 공동 동상.</p>
+                        
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="web" data-title="AI Smart Help Desk" data-stack="Python · 공통 데이터 모델 · 팀 통합" data-desc="공통 데이터 형식, 저장, 접수 상태 변경과 팀 통합을 담당하고 있습니다. 분류 결과와 관리자 화면이 같은 접수번호로 문의를 조회하도록 모듈 사이의 데이터 규칙을 정리하고 있습니다." data-source="https://github.com/dhj0057/ai-smart-helpdesk">
+                        <span class="card-tag mono">WEB · IN PROGRESS</span>
+                        <span class="num mono">05.</span>
+                        <h3>AI Smart Help Desk</h3>
+                        <p class="label mono">Python · 공통 데이터 모델 · 팀 통합</p>
+                        <p class="card-desc">대학 문의를 분류하고 FAQ 답변이나 관리자 검토로 연결하는 5인 팀 프로젝트.</p>
+                        <div class="project-links"><a class="project-btn mono" href="https://github.com/dhj0057/ai-smart-helpdesk" target="_blank" rel="noopener noreferrer">SOURCE</a></div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="web"
+                        data-title="HaruFit AI Health Chatbot" data-stack="Next.js · TypeScript · Gemini API · Vercel"
+                        data-desc="사용자의 식단, 운동 목표, 수면 상태와 생활 습관을 바탕으로 실천 가능한 일반 건강 관리 조언을 제공하는 대화형 서비스를 구현했습니다. Next.js API Route에서 Gemini API를 호출하여 키를 서버 환경 변수로 보호하고, 최근 대화만 전달해 토큰 사용량을 최적화했습니다. 반응형 채팅 UI와 빠른 질문 버튼, 로딩 및 오류 안내를 구성하고 Vercel에 배포했습니다."
+                        data-live="https://health-care-app-steel.vercel.app"
+                        data-source="https://github.com/dhj0057/HealthCareAPP">
+                        <span class="card-tag mono">WEB · AI</span>
+                        <span class="num mono">06.</span>
+                        <h3>HaruFit AI Health Chatbot</h3>
+                        <p class="label mono">Next.js · TypeScript · Gemini · Vercel</p>
+                        <p class="card-desc">생활 습관 기반 AI 건강 코칭 챗봇 개발 및 배포.</p>
+                        <div class="project-links">
+                            <a href="https://health-care-app-steel.vercel.app" target="_blank" rel="noopener noreferrer" class="project-btn mono">LIVE DEMO</a>
+                            <a href="https://github.com/dhj0057/HealthCareAPP" target="_blank" rel="noopener noreferrer" class="project-btn mono">SOURCE</a>
+                        </div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="java"
+                        data-title="Cafe Kiosk Order System" data-stack="Java · Java Swing · OOP"
+                        data-desc="객체지향 설계 원칙(상속, 캡슐화, 다형성)을 적용하여 카페 키오스크 프로그램을 구현했습니다. Product 추상 클래스를 Coffee·Dessert가 상속하는 구조로 다형성을 실현하고, ArrayList 컬렉션으로 주문 내역을 관리합니다. 20,000원 이상 주문 시 10% 할인이 자동 적용되며, 고객명 포함 영수증이 출력됩니다."
+                        data-live="https://dhj0057.github.io/Java_1st_Semester_Final_Assignment/"
+                        data-source="https://github.com/dhj0057/JAVA_CafeKiosk">
+                        <span class="card-tag mono">JAVA · OOP</span>
+                        <span class="num mono">07.</span>
+                        <h3>Cafe Kiosk Order System</h3>
+                        <p class="label mono">Java · Java Swing · OOP</p>
+                        <p class="card-desc">객체지향 기반 카페 키오스크 주문 관리 시스템.</p>
+                        <div class="project-links">
+                            <a href="https://dhj0057.github.io/Java_1st_Semester_Final_Assignment/" target="_blank" rel="noopener noreferrer" class="project-btn mono">LIVE DEMO</a>
+                            <a href="https://github.com/dhj0057/JAVA_CafeKiosk" target="_blank" rel="noopener noreferrer" class="project-btn mono">SOURCE</a>
+                        </div>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="data" data-title="가스환경 센서 예측" data-stack="Python · Dense · Conv1D" data-desc="6개 센서의 관측값을 0~1 범위로 맞추고 과거 관측 구간과 미래 목표값을 구성했습니다. 같은 데이터를 이용해 예측 시점과 모델에 따른 결과 차이를 비교했습니다.">
+                        <span class="card-tag mono">DATA · TIME SERIES</span>
+                        <span class="num mono">08.</span>
+                        <h3>가스환경 센서 예측</h3>
+                        <p class="label mono">Python · Dense · Conv1D</p>
+                        <p class="card-desc">온도·압력·가속도·가스 관측값으로 3초 후와 30초 후의 센서값을 예측한 수업 프로젝트.</p>
+                        
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="ai"
+                        data-title="Vision Processing Engine" data-stack="Python · OpenCV · NumPy"
+                        data-desc="실시간 영상 데이터의 노이즈 제거 및 엣지 검출 알고리즘을 구현했습니다. 단순 학습을 넘어, 픽셀 단위의 연산 효율성을 고려한 필터링 기술을 연구하고 있습니다.">
+                        <span class="card-tag mono">AI · VISION</span>
+                        <span class="num mono">09.</span>
+                        <h3>Vision Processing Engine</h3>
+                        <p class="label mono">Python · OpenCV · NumPy</p>
+                        <p class="card-desc">이미지 전처리 및 객체 인식 파이프라인 설계.</p>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+
+                    <article class="project-card reveal" data-category="data"
+                        data-title="RDBMS Structural Design" data-stack="SQL · MariaDB · ERD"
+                        data-desc="효율적인 데이터 적재와 조회를 위한 정규화 과정을 수행합니다. 최적의 인덱싱 구조를 도출하는 백엔드 기초 설계 프로젝트입니다.">
+                        <span class="card-tag mono">DATA · DB</span>
+                        <span class="num mono">10.</span>
+                        <h3>RDBMS Structural Design</h3>
+                        <p class="label mono">SQL · MariaDB · ERD</p>
+                        <p class="card-desc">데이터 무결성을 위한 관계형 데이터베이스 모델링.</p>
+                        <button class="text-btn mono open-modal">VIEW DETAILS →</button>
+                    </article>
+                </div>
+                <p class="empty-state mono" id="empty-state" hidden>// NO MODULES MATCH FILTER</p>
+            </div>
+        </section>
+
+        <!-- ░░ CONTACT ░░ -->
+        <section id="contact" class="details contact-section">
+            <div class="container">
+                <h2 class="section-title reveal">CONTACT</h2>
+                <hr class="divider">
+                <div class="contact-card reveal">
+                    <div class="card-info">
+                        <span class="card-label mono">// DEVELOPER</span>
+                        <h3 class="card-name">DO HYEONG JUN</h3>
+                        <div class="card-links mono">
+                            <p><strong>EMAIL</strong> dhj00570@gmail.com</p>
+                            <p><strong>BASE</strong> Korea Polytechnics</p>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/dhj0057" target="_blank" rel="noopener noreferrer" class="github-btn mono">
+                            VIEW GITHUB
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-left:8px;">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <footer class="site-footer mono">
+                    <span>© 2026 DO HYEONG JUN</span>
+                    <span>BUILT WITH HTML5 · CSS3 · JAVASCRIPT · JQUERY</span>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <!-- ░░ SYSTEM HUD (live readout) ░░ -->
+    <aside id="hud" class="mono" aria-hidden="true">
+        <span class="hud-row"><i>STATUS</i><b class="hud-online">● ONLINE</b></span>
+        <span class="hud-row"><i>TIME</i><b id="hud-clock">--:--:--</b></span>
+        <span class="hud-row"><i>SCROLL</i><b id="hud-scroll">000%</b></span>
+        <span class="hud-row"><i>SECTION</i><b id="hud-section">ABOUT</b></span>
+    </aside>
+
+    <!-- ░░ BACK TO TOP ░░ -->
+    <button id="back-to-top" class="mono" aria-label="맨 위로">↑ TOP</button>
+
+    <!-- ░░ PROJECT MODAL ░░ -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close mono" aria-label="닫기">[ ESC ] ✕</button>
+            <span class="modal-tag mono" id="modal-tag"></span>
+            <h3 id="modal-title"></h3>
+            <p class="label mono" id="modal-stack"></p>
+            <p class="modal-desc" id="modal-desc"></p>
+            <div class="modal-links" id="modal-links"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
